@@ -99,6 +99,7 @@
 			</div>
 		</div>
 		<script>
+			var a = 1;
 			function showfunction(num)
 			{
 				if (num==1)
@@ -108,7 +109,8 @@
 					document.getElementById("bodydemo").style="background-image:url('images/board.JPG');background-repeat: no-repeat; background-size: 100% 350%;background-attachment: fixed;"
 					document.getElementById("div1").style="display: none;"
 					document.getElementById("div2").style="display:;"
-					document.getElementById("div5").style="cursor:url('images/knife.ico'),auto;";;
+					document.getElementById("div5").style="cursor:url('images/knife.ico'),auto;";
+					a = 1;
 				}else
 				{
 					document.getElementById("icondemo").href="images/balloons.png";
@@ -117,6 +119,7 @@
 					document.getElementById("div1").style="display: none;"
 					document.getElementById("div3").style="display:;"
 					document.getElementById("div5").style="cursor:url('images/sight.ico'),auto;";
+					a = 2;
 				}
 			}
 
@@ -296,8 +299,16 @@
 						}
 						document.getElementById("fruit"+j).useMap="";
 						updateDisplay(n+=1);
-						const audio=new Audio("sounds/cutfruit.mp3");
-						audio.play();
+						if (a==1)
+						{
+							const audio=new Audio("sounds/cutfruit.mp3");
+							audio.play();
+						}
+						else
+						{
+							const audio=new Audio("sounds/cutballoon.wav");
+							audio.play();
+						}
 					}
 					else
 					{
